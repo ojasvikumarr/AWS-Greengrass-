@@ -1,0 +1,19 @@
+{
+  "component": {
+    "DemoComp1": {
+      "author": "Ojasvi ",
+      "version": "1.0.0",
+      "build": {
+        "build_system": "zip",
+        "options": {
+          "zip_name": "DemoComp1"
+        }
+      },
+      "publish": {
+        "bucket": "democores3bucket",
+        "region": "us-east-1"
+      }
+    }
+  },
+  "gdk_version": "1.3.0"
+}

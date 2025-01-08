@@ -1,0 +1,36 @@
+---
+RecipeFormatVersion: "2020-01-25"
+ComponentName: "{COMPONENT_NAME}"
+ComponentVersion: "{COMPONENT_VERSION}"
+ComponentDescription: "RTD data logged!!"
+ComponentPublisher: "{COMPONENT_AUTHOR}"
+ComponentConfiguration:
+  DefaultConfiguration:
+    PLC_IP: '192.168.0.1'
+    PLC_RACK: 0
+    PLC_SLOT: 1
+    AWS_REGION: 'us-east-1'
+    DATABASE_NAME: 'TestingDatabase'
+    TABLE_NAME: 'TestingTable'
+    LOGGING_INTERVAL: 5
+    Message: "RTD data logged!!"
+    accessControl:
+      aws.greengrass.ipc.mqttproxy:
+        "com.example.PythonMqttHello:mqttproxy:1":
+          policyDescription: "Allows access to publish to all topics."
+          operations:
+            - "aws.greengrass#PublishToIoTCore"
+          resources:
+            - "*"
+Manifests:
+  - Platform:
+      os: all
+    Artifacts:
+      - Uri: "s3://BUCKET_NAME/COMPONENT_NAME/COMPONENT_VERSION/DemoComp1.zip"
+        Unarchive: ZIP
+    Lifecycle:
+      Install: |
+        apt-get update && apt-get install -y python3 python3-pip
+        pip3 install snap7 boto3 botocore
+      Run: |
+        "python3 -u {artifacts:decompressedPath}/DemoComp1/main.py \"{configuration:/Message}\""
