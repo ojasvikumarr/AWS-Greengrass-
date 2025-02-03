@@ -11,7 +11,7 @@ Manifests:
   - Platform:
       os: all
     Artifacts:
-      - Uri: "s3://BUCKET_NAME/COMPONENT_NAME/COMPONENT_VERSION/com.example.Gagandeep.zip"
+      - Uri: "s3://BUCKET_NAME/COMPONENT_NAME/COMPONENT_VERSION/com.example.PythonHelloWorld.zip"
         Unarchive: ZIP
     Lifecycle:
-      run: "python3 -u {artifacts:decompressedPath}/com.example.Gagandeep/main.py {configuration:/Message}"
+      run: "python3 -u {artifacts:decompressedPath}/com.example.PythonHelloWorld/main.py {configuration:/Message}"

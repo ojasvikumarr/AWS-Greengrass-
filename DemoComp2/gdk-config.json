@@ -1,7 +1,7 @@
 {
   "component": {
-    "com.example.Gagandeep": {
-      "author": "Gagandeep",
+    "com.example.DemoComp2": {
+      "author": "Ojasvi",
       "version": "NEXT_PATCH",
       "build": {
         "build_system": "zip",
@@ -10,7 +10,7 @@
         }
       },
       "publish": {
-        "bucket": "helloworldddd",
+        "bucket": "democomp2",
         "region": "us-east-1"
       }
     }

@@ -1,7 +1,7 @@
 {
   "component": {
-    "com.example.Gagandeep": {
-      "author": "Gagandeep",
+    "com.example.PythonHelloWorld": {
+      "author": "<PLACEHOLDER_AUTHOR>",
       "version": "NEXT_PATCH",
       "build": {
         "build_system": "zip",
@@ -10,8 +10,8 @@
         }
       },
       "publish": {
-        "bucket": "helloworldddd",
-        "region": "us-east-1"
+        "bucket": "<PLACEHOLDER_BUCKET>",
+        "region": "<PLACEHOLDER_REGION>"
       }
     }
   },
